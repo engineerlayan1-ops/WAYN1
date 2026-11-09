@@ -1,0 +1,3 @@
+outline-offset:10px;
+بتعمل مسافة بين البوردر والخط الثاني
+outline:10px solid black;

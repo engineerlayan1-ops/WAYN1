@@ -1,0 +1,594 @@
+:root {
+    --navy: #0B2545;
+    --teal: #147D92;
+    --aqua: #58C4C6;
+    --light: #EAF6F6;
+    --white: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px 4%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: white;
+    white-space: nowrap;
+}
+
+.logo img {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo strong {
+    font-size: 24px;
+}
+
+.logo span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    font-size: 16px;
+    padding: 12px 15px;
+    border-radius: 12px;
+}
+
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.navbar a.active {
+    background: #f5f5f5;
+    color: var(--navy);
+    font-weight: bold;
+}
+
+.home-page {
+    min-height: 100vh;
+    color: white;
+    background:
+        linear-gradient(rgba(8, 23, 48, 0.1), rgba(8, 23, 48, 0.25)),
+        url("images/back1.jpeg") center / cover fixed;
+}
+
+.home-main {
+    max-width: 1500px;
+    margin: auto;
+    padding: 165px 4% 55px;
+}
+
+.breadcrumb {
+    display: block;
+    width: 33%;
+    min-width: 230px;
+    padding: 13px 17px;
+    margin-bottom: 65px;
+    background: rgba(20, 125, 146, 0.75);
+    border-radius: 10px;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.destination-card {
+    position: relative;
+    height: 215px;
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    border-radius: 16px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.destination-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.28),
+        transparent 45%,
+        rgba(0, 0, 0, 0.35)
+    );
+    pointer-events: none;
+}
+
+.destination-card h2 {
+    position: absolute;
+    top: 14px;
+    left: 17px;
+    right: 12px;
+    margin: 0;
+    color: white;
+    font-size: 20px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.view-button {
+    position: absolute;
+    left: 13px;
+    bottom: 10px;
+    z-index: 1;
+    padding: 9px 16px;
+    background: var(--teal);
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.view-button:hover {
+    background: var(--navy);
+}
+
+.destination-card.bali {
+    background-image: url("images/bali.jpeg");
+}
+
+.destination-card.thailand {
+    background-image: url("images/thailand.jpg");
+}
+
+.destination-card.amman {
+    background-image: url("images/amman.jpeg");
+}
+
+.destination-card.newyork {
+    background-image: url("images/newyork.jpeg");
+}
+
+.destination-card.maldives {
+    background-image: url("images/maldives.jpeg");
+}
+
+.destination-card.trabzon {
+    background-image: url("images/trabzon.jpeg");
+}
+
+.home-extra {
+    max-width: 1100px;
+    margin: 30px auto 50px;
+    padding: 25px;
+    text-align: center;
+    background: rgba(11, 37, 69, 0.75);
+    border-radius: 15px;
+}
+
+.details-page {
+    min-height: 100vh;
+    background: var(--light);
+    color: var(--navy);
+}
+
+.details-page .site-header {
+    background: var(--navy);
+}
+
+.details-container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 35px 25px 65px;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: var(--teal);
+    color: white;
+    border-radius: 9px;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background: var(--navy);
+}
+
+.destination-intro {
+    padding: 35px 10px 25px;
+    text-align: center;
+}
+
+.destination-intro h1 {
+    margin: 0 0 15px;
+    font-size: 43px;
+}
+
+.destination-intro p {
+    max-width: 850px;
+    margin: auto;
+    color: #435a70;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.details-hero {
+    height: 360px;
+    margin: 15px 0 45px;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(11, 37, 69, 0.16);
+}
+
+.details-hero img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section-heading {
+    margin: 25px 0 30px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.attractions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-bottom: 45px;
+}
+
+.attraction-card {
+    overflow: hidden;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(11, 37, 69, 0.12);
+}
+
+.attraction-card img {
+    display: block;
+    width: 100%;
+    height: 235px;
+    object-fit: cover;
+}
+
+.attraction-info {
+    padding: 20px;
+}
+
+.attraction-info h3 {
+    margin: 0 0 12px;
+    color: var(--teal);
+    font-size: 23px;
+}
+
+.attraction-info p {
+    margin: 0;
+    color: #4b6073;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.travel-info {
+    margin-bottom: 35px;
+    padding: 25px 30px;
+    background: white;
+    border-left: 6px solid var(--aqua);
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(11, 37, 69, 0.08);
+}
+
+.travel-info h2 {
+    margin-top: 0;
+    color: var(--teal);
+}
+
+.travel-info p {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+}
+
+footer {
+    padding: 25px 15px;
+    text-align: center;
+    background: var(--navy);
+    color: white;
+}
+
+.home-page footer {
+    background: rgba(11, 37, 69, 0.85);
+}
+
+@media (max-width: 950px) {
+    .site-header {
+        flex-direction: column;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .home-main {
+        padding-top: 75px;
+    }
+
+    .destinations-grid,
+    .attractions-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .logo strong {
+        font-size: 20px;
+    }
+
+    .logo span {
+        font-size: 13px;
+    }
+
+    .navbar {
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .navbar a {
+        font-size: 13px;
+        padding: 9px;
+    }
+
+    .home-main {
+        padding: 40px 15px;
+    }
+
+    .breadcrumb {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+
+    .destinations-grid,
+    .attractions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-card {
+        height: 235px;
+    }
+
+    .details-container {
+        padding: 25px 15px 45px;
+    }
+
+    .destination-intro h1 {
+        font-size: 32px;
+    }
+
+    .details-hero {
+        height: 230px;
+    }
+}
+
+.bali-theme {
+    --page-bg: #FFF4E8;
+    --page-primary: #27796B;
+    --page-accent: #F3A66A;
+    --page-soft: #FFE3C9;
+    --page-dark: #264B46;
+}
+
+.thailand-theme {
+    --page-bg: #EFFBF7;
+    --page-primary: #087F83;
+    --page-accent: #E9C57A;
+    --page-soft: #D5F5EF;
+    --page-dark: #12565D;
+}
+
+.jordan-theme {
+    --page-bg: #FBF2E6;
+    --page-primary: #A96F4B;
+    --page-accent: #D9B48A;
+    --page-soft: #F2DFCA;
+    --page-dark: #604531;
+}
+
+.newyork-theme {
+    --page-bg: #EEF3F1;
+    --page-primary: #234F56;
+    --page-accent: #C8794F;
+    --page-soft: #D9E7DF;
+    --page-dark: #193B41;
+}
+
+.maldives-theme {
+    --page-bg: #F1FCFC;
+    --page-primary: #087FAD;
+    --page-accent: #7DDCD8;
+    --page-soft: #D7F5F5;
+    --page-dark: #134C70;
+}
+
+.trabzon-theme {
+    --page-bg: #F0F5EB;
+    --page-primary: #315C43;
+    --page-accent: #D5B986;
+    --page-soft: #DCE9D7;
+    --page-dark: #203E2D;
+}
+
+.details-page {
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            var(--page-soft),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            var(--page-soft),
+            transparent 40%
+        ),
+        var(--page-bg);
+    color: var(--page-dark);
+}
+
+.details-page .site-header {
+    background: var(--page-dark);
+    border-bottom: 3px solid var(--page-accent);
+}
+
+.details-page .navbar a.active {
+    background: var(--page-accent);
+    color: var(--page-dark);
+}
+
+.details-page .destination-intro h1 {
+    color: var(--page-primary);
+    font-size: clamp(36px, 5vw, 58px);
+    letter-spacing: -1px;
+}
+
+.details-page .destination-intro h1::after {
+    content: "";
+    display: block;
+    width: 85px;
+    height: 5px;
+    margin: 18px auto 0;
+    border-radius: 10px;
+    background: var(--page-accent);
+}
+
+.details-page .destination-intro p {
+    color: var(--page-dark);
+}
+
+.details-page .details-hero {
+    border: 6px solid white;
+    border-radius: 28px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+}
+
+.details-page .section-heading {
+    color: var(--page-primary);
+    font-size: clamp(26px, 3vw, 36px);
+}
+
+.details-page .section-heading::after {
+    content: "✦ ✦ ✦";
+    display: block;
+    margin-top: 12px;
+    color: var(--page-accent);
+    font-size: 17px;
+    letter-spacing: 9px;
+}
+
+.details-page .attractions-grid {
+    gap: 26px;
+}
+
+.details-page .attraction-card {
+    border: 1px solid var(--page-soft);
+    border-radius: 24px;
+    background: white;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s, box-shadow 0.35s;
+}
+
+.details-page .attraction-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 22px 40px rgba(0, 0, 0, 0.15);
+}
+
+.details-page .attraction-card img {
+    height: 250px;
+    transition: transform 0.5s;
+}
+
+.details-page .attraction-card:hover img {
+    transform: scale(1.06);
+}
+
+.details-page .attraction-card {
+    isolation: isolate;
+}
+
+.details-page .attraction-info {
+    padding: 25px;
+    border-top: 5px solid var(--page-accent);
+}
+
+.details-page .attraction-info h3 {
+    color: var(--page-primary);
+}
+
+.details-page .attraction-info p {
+    color: #52616B;
+}
+
+.details-page .travel-info {
+    background: linear-gradient(
+        135deg,
+        white,
+        var(--page-soft)
+    );
+    border-left: 7px solid var(--page-primary);
+    border-radius: 22px;
+    padding: 30px;
+}
+
+.details-page .travel-info h2 {
+    color: var(--page-primary);
+}
+
+.details-page .back-button {
+    background: var(--page-primary);
+    color: white;
+    border-radius: 30px;
+    padding: 14px 25px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.details-page .back-button:hover {
+    background: var(--page-dark);
+    transform: translateY(-3px);
+}
+
+.details-page footer {
+    background: var(--page-dark);
+    border-top: 4px solid var(--page-accent);
+}
